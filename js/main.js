@@ -260,7 +260,7 @@
         if (!container) return;
 
         // RSS to JSON proxy
-        const rssUrl = encodeURIComponent('https://www.goodreads.com/review/list_rss/166500511?key=4aXwl33WzfWeCxROER0dLcXmUzxmt6Nb58LF0DLlzBwnsFCj&shelf=currently-reading');
+        const rssUrl = encodeURIComponent(`https://www.goodreads.com/review/list_rss/166500511?key=4aXwl33WzfWeCxROER0dLcXmUzxmt6Nb58LF0DLlzBwnsFCj&shelf=currently-reading&t=${new Date().getTime()}`);
         const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
 
         fetch(apiUrl)
@@ -310,8 +310,8 @@
                                 <img src="${coverUrl}" alt="${title}" style="width: 100%; display: block; height: auto;">
                             </a>
                             <div class="book-info">
-                                <h4 style="margin-bottom: 0.2rem; font-size: 2rem; line-height: 1.2; font-family: 'Patrick Hand', cursive;"><a href="${link}" target="_blank" style="color: inherit;">${title}</a></h4>
-                                <p style="font-size: 1.4rem; margin-bottom: 0; color: #777; font-family: 'Patrick Hand', cursive;">${author}</p>
+                                <h4 style="margin-bottom: 0.2rem; font-size: 2rem; line-height: 1.2;"><a href="${link}" target="_blank" style="color: inherit;">${title}</a></h4>
+                                <p style="font-size: 1.4rem; margin-bottom: 0; color: #777;">${author}</p>
                             </div>
                         </div>
                         `;
