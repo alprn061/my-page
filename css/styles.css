@@ -4589,3 +4589,27 @@ td:last-child {
         padding-right: var(--gutter) !important;
     }
 }
+/* ------------------------------------------------------------------- 
+ * ## Doodle Arrow (Current Focus Section)
+ * ------------------------------------------------------------------- */
+.doodle-arrow-container {
+    display: none; /* Hidden by default (mobile/tablet/small desktop) */
+    position: absolute;
+    left: -520px;
+    top: -150px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.doodle-arrow-container img {
+    width: 400px;
+    opacity: 0.8;
+    transform: rotate(10deg);
+}
+
+/* Show only on wide screens where there is space */
+@media screen and (min-width: 1400px) {
+    .doodle-arrow-container {
+        display: block;
+    }
+}
